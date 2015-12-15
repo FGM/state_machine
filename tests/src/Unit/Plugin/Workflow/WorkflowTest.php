@@ -53,6 +53,7 @@ class WorkflowTest extends UnitTestCase {
     ];
     $workflow = new Workflow([], 'test', $plugin_definition, $guard_factory->reveal());
 
+    $states = $workflow->getStates();
     $state = $workflow->getState('draft');
     $this->assertEquals($state, $states['draft']);
     $this->assertEquals('draft', $state->getId());
